@@ -42,6 +42,7 @@ export class ShoppingCart {
       throw new Error(INVALID_INPUT_DATA, { cause: 'Input data is not a string' })
     }
 
+    // Validate if productCode or promoCode is using other special characters
     if (regex.test(productCode) || (promoCode && regex.test(promoCode))) {
       throw new Error(INVALID_INPUT_DATA, { cause: 'Input data contains special characters that are not allowed' })
     }
