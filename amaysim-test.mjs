@@ -24,7 +24,7 @@ const productList = [
   }
 ]
 
-class ShoppingCart {
+export class ShoppingCart {
   #promoCodes
   constructor () {
     this.#promoCodes = ['I<3AMAYSIM']
@@ -35,10 +35,15 @@ class ShoppingCart {
   }
 
   async addItem(productCode, promoCode) {
+    const regex = /[`!@#$%^&*()+\-=\[\]{};':"\\|,.>\/?~]/
 
     // Validate if input type is valid
-    if (typeof productCode !== 'string') {
+    if (!productCode || typeof productCode !== 'string') {
       throw new Error(INVALID_INPUT_DATA, { cause: 'Input data is not a string' })
+    }
+
+    if (regex.test(productCode) || (promoCode && regex.test(promoCode))) {
+      throw new Error(INVALID_INPUT_DATA, { cause: 'Input data contains special characters that are not allowed' })
     }
 
     // Validate if product code exists
@@ -126,9 +131,9 @@ class ShoppingCart {
       await this.#applyDiscount()
     }
 
-    console.log('HAS DISCOUNT ', this.hasPromoCode)
-    console.log('FINAL PRODUCT ITEMS: ', this.productItems.sort((a, b) => b.price - a.price ))
-    console.log(`FINAL PRICE: $${parseFloat(this.totalPrice).toFixed(2)}`)
+    // console.log('HAS DISCOUNT ', this.hasPromoCode)
+    // console.log('FINAL PRODUCT ITEMS: ', this.productItems.sort((a, b) => b.price - a.price ))
+    // console.log(`FINAL PRICE: $${parseFloat(this.totalPrice).toFixed(2)}`)
 
   }
 }
