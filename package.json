@@ -1,0 +1,16 @@
+{
+  "name": "amaysim-ean",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "shopping cart",
+  "main": "amaysim-test.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test:single": "jest test/unit.test.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ean De Castro",
+  "license": "ISC"
+}
