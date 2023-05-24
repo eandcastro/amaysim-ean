@@ -25,7 +25,6 @@ const PRODUCT_DEFAULTS = {
   },
 }
 
-
 const DISCOUNT_TYPE = {
   PERCENT: 'percent',
 }
@@ -39,6 +38,7 @@ const PRICE_RULES = [
   'pricingRule2Gb',
   'pricingRule5Gb',
 ]
+
 class Product {
   code: string
   name: string
