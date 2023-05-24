@@ -8,12 +8,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/unit.test.js"
+    "test": "nyc mocha test/unit.test.js"
   },
   "author": "Ean De Castro",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0"
   }
 }

@@ -67,6 +67,7 @@ export class ShoppingCart {
     this.productItems.push(item)
   }
 
+  // PERSONAL NOTE: MADE THIS AS REUSABLE METHOD AS THIS IS REDUDANTLY USED
   async filterProductItems (productCode) {
     return this.productItems.map((productItem) => { return productItem.productCode === productCode }).filter(item => { return item })
   }
@@ -111,7 +112,7 @@ export class ShoppingCart {
     // Check if user is subscribed for the 1st month - mocking the value for now
     // One month = 2,592,000 for 30-day months
 
-    // const userSubscribedTimestamp = 1683215250
+    // const userSubscribedTimestamp = new Date()
     // const promoExpirationTimestamp = 1683215250 + 2592000
 
     // if (userSubscribedTimestamp === promoExpirationTimestamp) {

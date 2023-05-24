@@ -55,6 +55,18 @@ describe('Shopping Cart', function () {
     }
   });
 
+  // it('should give 3 for 2 deal on 6pcs Unlimited 1GB Sims', async function () {
+  //   await cart.addItem('ult_small')
+  //   await cart.addItem('ult_small')
+  //   await cart.addItem('ult_small')
+  //   await cart.addItem('ult_small')
+  //   await cart.addItem('ult_small')
+  //   await cart.addItem('ult_small')
+  //   await cart.getTotalPrice()
+
+  //   expect(parseFloat(cart.totalPrice).toFixed(2)).to.eql('99.60')
+  // });
+
   it('should give 3 for 2 deal on Unlimited 1GB Sims', async function () {
     await cart.addItem('ult_small')
     await cart.addItem('ult_small')
