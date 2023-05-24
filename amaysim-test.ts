@@ -53,14 +53,12 @@ class ShoppingCart {
   promoCodes: any[]
   items: any[]
   totalPrice: number
-  hasPromoCode: boolean
   pricingRules: string[]
 
   constructor (pricingRules: string[]) {
       this.promoCodes = PROMO_CODES
       this.items = []
       this.totalPrice = 0
-      this.hasPromoCode = false
       this.pricingRules = pricingRules
   }
 
@@ -99,9 +97,8 @@ class ShoppingCart {
       
       let availedPromo = PROMO_CODES.find((item) => {return item.code === promoCode })
       if (availedPromo) {
-
           if (availedPromo.type === DISCOUNT_TYPE.PERCENT) {
-                  subTotal = Number(Number(subTotal - (subTotal * (availedPromo.discount / 100))).toFixed(2));
+            subTotal = Number(Number(subTotal - (subTotal * (availedPromo.discount / 100))).toFixed(2));
           }
       }
 
